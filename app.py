@@ -13,15 +13,42 @@ from utils import send_text_message
 load_dotenv()
 
 machine = TocMachine(
-    states=["user","weather", "input_district"],
+    states=[
+        "user",
+        "weather", 
+        "input_district", 
+        "todo_list","input_crud",
+        "database_create",
+        "database_update",
+        "database_update_input",
+        "database_delete",
+    ],
     transitions=[
         { "trigger": "advance","source": "user","dest": "weather","conditions": "is_going_to_weather"},
         {"trigger": "advance", "source": "weather","dest": "input_district", "conditions": "is_going_to_input_district"},
-        {"trigger": "advance", "source": "input_district","dest": "input_district", "conditions": "is_going_to_input_district"},
-        {
-            "trigger": "go_back", 
-            "source": ["weather", "input_district"],
-             "dest": "user"
+        {"trigger": "advance", "source":  "input_district","dest": "input_district", "conditions": "is_going_to_input_district"},
+        
+        {"trigger": "advance", "source": "user","dest": "todo_list", "conditions": "is_going_to_todo_list"},
+        {"trigger": "advance", "source": "todo_list","dest": "input_crud", "conditions": "is_going_to_input_crud"},
+        {"trigger": "advance", "source": "input_crud","dest": "database_create", "conditions": "is_going_to_database_create"},
+        {"trigger": "advance", "source": "database_create","dest": "todo_list", "conditions": "is_going_to_todo_list"},
+        {"trigger": "advance", "source": "input_crud","dest": "database_update", "conditions": "is_going_to_database_update"},
+        {"trigger": "advance", "source": "database_update","dest": "database_update_input", "conditions": "is_going_to_database_update_input"},
+        {"trigger": "advance", "source": "database_update_input","dest": "todo_list", "conditions": "is_going_to_todo_list"},        
+        {"trigger": "advance", "source": "input_crud","dest": "database_delete", "conditions": "is_going_to_database_delete"},
+        {"trigger": "advance", "source": "database_delete","dest": "todo_list", "conditions":"is_going_to_todo_list"},
+        
+        {"trigger": "go_back", 
+            "source": [
+                "weather", 
+                "input_district", 
+                "todo_list","input_crud",
+                "database_create",
+                "database_update",
+                "database_update_input",
+                "database_delete",
+            ],
+            "dest": "user"
         },
     ],
     initial="user",
@@ -73,8 +100,13 @@ def webhook_handler():
 
         if response == False:
             if machine.state != 'user' and event.message.text.lower() == 'restart':
-                send_text_message(event.reply_token, '輸入『restart』返回主頁面。\n隨時輸入『fsm』可以得到當下的狀態圖。')
+                send_text_message(event.reply_token, '輸入『restart』返回主頁面。\n隨時輸入『fsm』可以得到當下的狀態圖。')                
                 machine.go_back()
+                print(f"\n 3. FSM STATE: {machine.state}")
+            elif machine.state == 'input_district':
+                send_text_message(event.reply_token,'你還想知道台灣哪個地區的天氣狀況?')
+
+
 
     return "OK"
 

@@ -11,6 +11,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from utils import send_text_message,send_button_message,send_image_message
+from database import create, read, update, delete
 
 weather_api = os.getenv("WEATHER_API", None)
 
@@ -24,7 +25,7 @@ class TocMachine(GraphMachine):
         text = event.message.text
         return text == "天氣"
     def on_enter_weather(self, event):
-        send_text_message(event.reply_token, '請輸入台灣的哪個地區?')
+        send_text_message(event.reply_token, '你想知道台灣哪個地區的天氣狀況?')
 
     def is_going_to_input_district(self, event):
 
@@ -73,9 +74,125 @@ class TocMachine(GraphMachine):
 
         send_text_message(event.reply_token,  content)
 
+    def is_going_to_todo_list(self, event):
+        text = event.message.text
+
+        if 'todo' or 'todo list' or 'todolist' in text:
+            return True
+
+        return False
+    def on_enter_todo_list(self, event):
+
+        title = '請選擇你要如何編輯todo list'
+        text = 'CRUD'
+        btn = [
+            MessageTemplateAction(
+                label = 'Create',
+                text ='Create'
+            ),
+            MessageTemplateAction(
+                label = 'Read',
+                text = 'Read'
+            ),
+            MessageTemplateAction(
+                label = 'Update',
+                text = 'Update'
+            ),
+            MessageTemplateAction(
+                label = 'Delete',
+                text = 'Delete',
+            ),
+        ]
+        url = 'https://i.imgur.com/XkACYTI.jpeg'
+        send_button_message(event.reply_token, title, text, btn, url)
+
+    def is_going_to_input_crud(self, event):
+        global crud
+        text = event.message.text
+
+        if text == 'Create' or text == 'Read' or text == 'Update' or text == 'Delete':
+            crud = text
+            return True
+
+        return False     
+        
+    def on_enter_input_crud(self, event):
+
+        if crud == 'Create':
+            send_text_message(event.reply_token, '請輸入你的清單項目')
+        elif crud == 'Read':
+            send_text_message(event.reply_token, 
+        send_text_message(event.reply_token, '這是你目前的todolist : \n'+read()) )
+        elif crud == 'Update':
+            send_text_message(event.reply_token, '你要更新todolist哪個項目的狀態?\n'+read())
+        else:
+            send_text_message(event.reply_token, '你要刪除todolist哪個項目?\n'+read())
+
+    def is_going_to_database_create(self, event):
+        if(crud != 'Create'):
+            return False
+        create(event.message.text)        
+        return True
+
+    def on_enter_database_create(self, event):
+
+        send_text_message(event.reply_token, '這是你目前的todolist : \n'+read())
+
+    def is_going_to_database_update(self, event):
+        if(crud != 'Update' or event.message.text.isnumeric()==False):
+            return False
+
+        global todo_num 
+        todo_num = int(event.message.text)
+        return True
+
+    def on_enter_database_update(self, event):
+
+        title = '請選擇你要更新的狀態'
+        text = ''
+        btn = [
+            MessageTemplateAction(
+                label = 'todo',
+                text ='todo'
+            ),
+            MessageTemplateAction(
+                label = 'doing',
+                text = 'doing',
+            ),
+            MessageTemplateAction(
+                label = 'finished',
+                text = 'finished',
+            ),
+        ]
+        url = 'https://i.imgur.com/9inLzSB.png'
+        send_button_message(event.reply_token, title, text, btn, url)
     
+    def is_going_to_database_update_input(self, event):
+
+        global todo_state
+        text = event.message.text
+
+        if text == 'todo' or text == 'doing' or text == 'finished':
+            todo_state = text
+            return True
+
+        return False  
+
+    def on_enter_database_update_input(self, event):
+        update(todo_num, todo_state)
+        send_text_message(event.reply_token, '這是你目前的todolist : \n'+read())
         
 
+    def is_going_to_database_delete(self, event):
+        if crud != 'Delete':
+            return False
+
+        delete(int(event.message.text))
+        return True
+        
+    def on_enter_database_database_delete(self, event):
+        
+        send_text_message(event.reply_token, '這是你目前的todolist : \n'+read())
 
 
     
