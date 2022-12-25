@@ -38,6 +38,8 @@ machine = TocMachine(
         {"trigger": "advance", "source": "input_crud","dest": "database_delete", "conditions": "is_going_to_database_delete"},
         {"trigger": "advance", "source": "database_delete","dest": "todo_list", "conditions":"is_going_to_todo_list"},
         
+
+        
         {"trigger": "go_back", 
             "source": [
                 "weather", 

@@ -34,7 +34,7 @@ def read():
     todo_list = collection.find({})
     results = ""
     for todo in todo_list:
-        results += str(todo['num']) + '. ' + todo['item'] + ' : ' +  todo['state'] + '\n'
+        results += str(todo['num']) + '. ' + todo['time'] + ' ' +  todo['item'] + ' : ' +  todo['state'] + '\n'
     
     return results
 
