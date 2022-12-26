@@ -35,32 +35,32 @@ python 3.9.13
     - `todo` : 可以對todolist做CRUD的編輯
 - 使用示範
     - hello
-       ![](https://user-images.githubusercontent.com/92961617/209499469-2b41ef0c-f0f1-4db5-bfe7-b0fe3540ec54.png)
+        ![](https://user-images.githubusercontent.com/92961617/209499469-2b41ef0c-f0f1-4db5-bfe7-b0fe3540ec54.png)
     - 天氣 
         - 問地區
-            <img width="315" alt="image" src="https://user-images.githubusercontent.com/92961617/209499562-e4d48dfb-94fb-44a0-84de-714305c7e6ae.png">
+            ![](https://user-images.githubusercontent.com/92961617/209499562-e4d48dfb-94fb-44a0-84de-714305c7e6ae.png)
         - 可以繼續問，若是不想問了，就打`restart`
-            <img width="521" alt="image" src="https://user-images.githubusercontent.com/92961617/209499717-98431050-c223-4df0-8ae3-3a63686fc073.png">
-            <img width="521" alt="image" src="https://user-images.githubusercontent.com/92961617/209499732-beb564c8-f12c-41c4-970a-eedbed75e61e.png">
+            ![](https://user-images.githubusercontent.com/92961617/209499717-98431050-c223-4df0-8ae3-3a63686fc073.png)
+            ![](https://user-images.githubusercontent.com/92961617/209499732-beb564c8-f12c-41c4-970a-eedbed75e61e.png)
     - todolist
         - 問CRUD的哪個，一個項目進行完可以打todo就可以繼續下一個項目
-            <img width="371" alt="image" src="https://user-images.githubusercontent.com/92961617/209499798-1bcf016d-a7ea-48eb-ada6-bfa377d31e0a.png">
+           ![](https://user-images.githubusercontent.com/92961617/209499798-1bcf016d-a7ea-48eb-ada6-bfa377d31e0a.png)
         - Create
-            <img width="367" alt="image" src="https://user-images.githubusercontent.com/92961617/209500637-181940da-fa30-47ee-9eb6-b915ec7c1a0a.png">
+            ![](https://user-images.githubusercontent.com/92961617/209500637-181940da-fa30-47ee-9eb6-b915ec7c1a0a.png)
         - Read
-            <img width="367" alt="image" src="https://user-images.githubusercontent.com/92961617/209501310-6ce5b010-6962-4955-8674-c5115f983b10.png">
+            ![](https://user-images.githubusercontent.com/92961617/209501310-6ce5b010-6962-4955-8674-c5115f983b10.png)
         - Update
             - 輸入要更新的項目的編號
-                <img width="366" alt="image" src="https://user-images.githubusercontent.com/92961617/209501523-c1a5086c-dd06-42b0-8573-75b67368a2c0.png">
+                ![](https://user-images.githubusercontent.com/92961617/209501523-c1a5086c-dd06-42b0-8573-75b67368a2c0.png)
             - 選擇要更新狀態
-                <img width="367" alt="image" src="https://user-images.githubusercontent.com/92961617/209501578-7339004c-da6f-4306-9559-88d02e821ac1.png">
+                ![](https://user-images.githubusercontent.com/92961617/209501578-7339004c-da6f-4306-9559-88d02e821ac1.png)
             - 最後顯示目前todolist
-                <img width="368" alt="image" src="https://user-images.githubusercontent.com/92961617/209501643-18d0216c-b9f2-4894-abbc-36d437d4b930.png">
+                ![](https://user-images.githubusercontent.com/92961617/209501643-18d0216c-b9f2-4894-abbc-36d437d4b930.png)
         - Delete
             - 輸入要刪除的項目的編號
-                <img width="364" alt="image" src="https://user-images.githubusercontent.com/92961617/209501807-215e51e1-a639-470b-ab60-91eb70fefa9f.png">
+                ![](https://user-images.githubusercontent.com/92961617/209501807-215e51e1-a639-470b-ab60-91eb70fefa9f.png)
             - 最後顯示目前todolist
-                <img width="363" alt="image" src="https://user-images.githubusercontent.com/92961617/209501867-693cc6e6-0dc5-43e7-b5a3-b76fe3ab959d.png">
+                ![](https://user-images.githubusercontent.com/92961617/209501867-693cc6e6-0dc5-43e7-b5a3-b76fe3ab959d.png)
 
 
 ## 參考資料
