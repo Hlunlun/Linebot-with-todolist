@@ -20,8 +20,8 @@ python 3.9.13
     - WEATHER_API : 到[這裡](https://opendata.cwb.gov.tw/index)申請api
     - CONNECTION_STRING : 到[這裡](https://www.mongodb.com/cloud/atlas/lp/try4?utm_source=google&utm_campaign=search_gs_pl_evergreen_atlas_core_prosp-brand_gic-null_apac-tw_ps-all_desktop_eng_lead&utm_term=mongodb&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=12212624371&adgroup=115749712503&gclid=CjwKCAiAhqCdBhB0EiwAH8M_GqHmbl1XW6yHgbzP4VmuBLvUhBQH6yFpdqSkwjKZ6l1pbos3pBctjRoCxngQAvD_BwE)創建mongodb帳號
 3. pygraphviz : for windows
-    - [how to install :movie_camera:](https://www.youtube.com/watch?v=XnxIfoUQeWw&list=PLxrVsqcpsInEp-4fEgT0F2nS9CXWCyKn6&index=1)
-    - [Download graphviz](https://graphviz.org/download/)
+    :paperclip: [how to install :movie_camera:](https://www.youtube.com/watch?v=XnxIfoUQeWw&list=PLxrVsqcpsInEp-4fEgT0F2nS9CXWCyKn6&index=1)
+    :paperclip: [Download graphviz](https://graphviz.org/download/)
 4. open ngrok.exe : 記得先安裝
 5. type `ngrok http 5000`
 6. run app.py : `python app.py`
@@ -34,8 +34,10 @@ python 3.9.13
     - `weather` : 查詢天氣
     - `todo` : 可以對todolist做CRUD的編輯
 - 使用示範
-    hello
-    
+    - hello
+    <img width="310" alt="image" src="https://user-images.githubusercontent.com/92961617/209499469-2b41ef0c-f0f1-4db5-bfe7-b0fe3540ec54.png">
+    - 天氣 
+
 
 
 
