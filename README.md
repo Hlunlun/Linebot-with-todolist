@@ -1,4 +1,6 @@
-# 日常瑣事 linebot
+###### tags: `Line Bot` `FSM` `Python`
+# Line Bot - 日常瑣事linebot (Implement FSM)
+[example code](https://github.com/NCKU-CCS/TOC-Project-2020), [Hlunlun](https://github.com/Hlunlun/linebot/tree/master)
 
 ## 前言
 1. 外出看天氣可以直接查詢
@@ -61,7 +63,8 @@ python 3.9.13
                 ![](https://user-images.githubusercontent.com/92961617/209501807-215e51e1-a639-470b-ab60-91eb70fefa9f.png)
             - 最後顯示目前todolist
                 ![](https://user-images.githubusercontent.com/92961617/209501867-693cc6e6-0dc5-43e7-b5a3-b76fe3ab959d.png)
-
+    - 輸入`fsm`
+        ![](https://i.imgur.com/KH5QOun.png)
 
 ## 參考資料
 - [sample code](https://github.com/NCKU-CCS/TOC-Project-2020/blob/master/app.py)
@@ -77,6 +80,4 @@ python 3.9.13
 -  [How to ignore certain files in Git](https://stackoverflow.com/questions/4308610/how-to-ignore-certain-files-in-git)
 ### line develop
 -  [line develop](https://account.line.biz/login?redirectUri=https%3A%2F%2Fdevelopers.line.biz%2Fconsole%2Fchannel%2F1657725664)
-
-
 
