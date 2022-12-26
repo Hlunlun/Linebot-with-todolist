@@ -3,15 +3,14 @@
 ## 前言
 1. 外出看天氣可以直接查詢
 2. 也可以是todo list，隨時查看還有哪些事沒完成
-3. 放假時，存了幾部最近看的電影，周末來看
-4. 
 
 ## 環境：
 python 3.9.13
 
 ## 技術
 - pymogo : 連接資料庫
-- Beautiful : 
+- api : 搜尋氣象資料
+- mongodb : 存todolist
 
 ## How to start
 1. `pip3 install pipenv`
@@ -20,9 +19,12 @@ python 3.9.13
     - LINE_CHANNEL_ACCESS_TOKEN
     - WEATHER_API : 到[這裡](https://opendata.cwb.gov.tw/index)申請api
     - CONNECTION_STRING : 到[這裡](https://www.mongodb.com/cloud/atlas/lp/try4?utm_source=google&utm_campaign=search_gs_pl_evergreen_atlas_core_prosp-brand_gic-null_apac-tw_ps-all_desktop_eng_lead&utm_term=mongodb&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=12212624371&adgroup=115749712503&gclid=CjwKCAiAhqCdBhB0EiwAH8M_GqHmbl1XW6yHgbzP4VmuBLvUhBQH6yFpdqSkwjKZ6l1pbos3pBctjRoCxngQAvD_BwE)創建mongodb帳號
-3. open ngrok.exe : 記得先安裝
-4. type `ngrok http 5000`
-5. run app.py : `python app.py`
+3. pygraphviz : for windows
+    - [how to install :movie_camera:](https://www.youtube.com/watch?v=XnxIfoUQeWw&list=PLxrVsqcpsInEp-4fEgT0F2nS9CXWCyKn6&index=1)
+    - [Download graphviz](https://graphviz.org/download/)
+4. open ngrok.exe : 記得先安裝
+5. type `ngrok http 5000`
+6. run app.py : `python app.py`
 
 ## 操作說明
 - 基本操作  
@@ -31,7 +33,11 @@ python 3.9.13
 - 架構
     - `weather` : 查詢天氣
     - `todo` : 可以對todolist做CRUD的編輯
-    - `movie` : 可以存喜歡看的電影
+- 使用示範
+    hello
+    
+
+
 
 
 ## 參考資料

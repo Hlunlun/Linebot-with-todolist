@@ -34,7 +34,7 @@ def read():
     todo_list = collection.find({})
     results = ""
     for todo in todo_list:
-        results += str(todo['num']) + '. ' + todo['time'] + ' ' +  todo['item'] + ' : ' +  todo['state'] + '\n'
+        results += str(todo['num']) + '. ' + todo['time'] + ' ' +  todo['item'] + ' : ' +  todo['state'] + '\n\n'
     
     return results
 
@@ -63,13 +63,7 @@ def delete(num):
             collection.update_one({'item' : {'$eq' : todo['item']}},{'$set' : {'num' : todo['num']-1}})
 
 
-
 if __name__ == "__main__": 
     db = get_database()
     collection = db['list']
     todo_list = collection.find({})
-    # create('eat')
-    # create('sleep')
-
-    # delete(1)
-    # print(read())
